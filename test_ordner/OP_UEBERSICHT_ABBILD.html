@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0//DE"><html><head>                                                                                                                                                                                                   
+<meta http-equiv="content-type" content="text/html; charset=utf-8">                                                                                                                                                                                                                                                        
+<title>Dokument mit externem JavaScript</title><script src="http://webint1.mh-hannover.local/anzeigetafel/Java_Skripte//sp3_joergs.js"></script>
+
+<style>
+
+body{ 
+	background-color: ivory; margin-top:35px; 
+}
+
+.button1{
+	border: 1px solid #58ACFA;
+	border-radius: 4px;
+	background-color: #CEE3F6;
+	float: top;
+	margin-top: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	color: black;
+	cursor: pointer;
+}
+
+	
+.button1:hover{
+	background-color: white;
+}
+	
+.canvas1{
+	background-color: #CEE3F6;
+}
+	
+.canvas1:hover{
+	background-color: white;
+}
+	
+.buttonGroup {
+	border-radius: 4px;
+	padding: 10px 25px;
+	margin:auto;
+	display:block;
+	display:table-cell;
+	cursor: pointer;
+}
+
+.klinAuftr {
+	border: 2px solid #9edfb7;
+	background-color: #9edfb7;
+	background-image: url(http://webint1.mh-hannover.local/anzeigetafel/sapdash/klinAuftr_32px.png);background-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-right: 2px;
+}
+
+.klinAuftr:hover{
+	background-color: white;
+}
+
+.klinDoku{
+	border: 2px solid #86bbd4;
+	background-color: #86bbd4;
+	background-image: url(http://webint1.mh-hannover.local/anzeigetafel/sapdash/klinDoku_32px.png);
+	background-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.klinDoku:hover{
+	background-color: white;
+}
+
+.labor{
+	border: 2px solid #D195BC;
+	background-color: #D195BC;
+	background-image: url(http://webint1.mh-hannover.local/anzeigetafel/sapdash/labor_32px.png);
+	background-size:16px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-left: 2px;
+}
+
+.labor:hover{
+	background-color: white;
+}
+
+.ort{
+	border: 2px solid #c8b8e0;
+	background-color: #c8b8e0;
+	background-image: url(http://webint1.mh-hannover.local/anzeigetafel/sapdash/bed_32px.png);background-size: 32px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	horizontal-align: right;
+}
+
+.ort:hover{
+	background-color: white;
+}
+
+#wrapper{
+	position:relative; 
+	width:1200px; 
+	height:600px;
+}
+
+#tip_OP{
+	background-color: white; border:2px solid #9edfb7; 
+	border-radius: 4px; 
+	position:absolute; left:-500px; top:100px;
+}
+
+#zeit{
+	position:absolute; 
+	left: 20px; 
+	top: 40px; 
+	font-style: bold;
+}
+
+</style>
+</head>
+
+
+<body>
+
+	<div id="wrapper">
+		<canvas id="tip_OP" width = "250" height = "65"></canvas>
+		
+		<table border = "0" width="1740">
+			<tr>
+				<td width = "350" height = "80">
+					<button id="btn1" type="button" class="button1" onClick="info('ZOPSO041_DATA1')"; name="SAAL">
+						<canvas id="ZOPSO041" class="saalcanvas1" width = "150" height = "40"></canvas>
+					</button>
+					<button id="klinAuftr" type="button" class="buttonGroup klinAuftr" onClick="edit('AUFTRAG')"></button>
+					<button id="klinDoku" type="button" class="buttonGroup klinDoku" onClick="edit('DOKU')"></button>
+					<button id="Labor" type="button" class="buttonGroup labor" onClick="editSaal('ZOPSO041')"></button>
+				</td>
+				<td width = "1200" height = "80">
+					<canvas id="ZOPSO041_DATA1" width = "1540" height = "80"></canvas>
+				</td>
+			</tr>
+			<tr>
+				<td width = "350" height = "80">
+					<button id="btn1" type="button" class="button1" onClick="info('ZOPSO042_DATA1')"; name="SAAL">
+						<canvas id="ZOPSO042" class="saalcanvas1" width = "150" height = "40"></canvas>
+					</button>
+					<button id="klinAuftr" type="button" class="buttonGroup klinAuftr" onClick="edit('AUFTRAG')"></button>
+					<button id="klinDoku" type="button" class="buttonGroup klinDoku" onClick="edit('DOKU')"></button>
+					<button id="Labor" type="button" class="buttonGroup labor" onClick="editSaal('ZOPSO042')"></button>
+				</td>
+				<td width = "1200" height = "80">
+					<canvas id="ZOPSO042_DATA1" width = "1540" height = "80"></canvas>
+				</td>
+			</tr>
+			<tr>
+				<td width = "350" height = "80">
+					<button id="btn1" type="button" class="button1" onClick="info('ZOPSO044_DATA1')"; name="SAAL">
+						<canvas id="ZOPSO044" class="saalcanvas1" width = "150" height = "40"></canvas>
+					</button>
+					<button id="klinAuftr" type="button" class="buttonGroup klinAuftr" onClick="edit('AUFTRAG')"></button>
+					<button id="klinDoku" type="button" class="buttonGroup klinDoku" onClick="edit('DOKU')"></button>
+					<button id="Labor" type="button" class="buttonGroup labor" onClick="editSaal('ZOPSO044')"></button>
+				</td>
+				<td width = "1200" height = "80">
+					<canvas id="ZOPSO044_DATA1" width = "1540" height = "80"></canvas>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+      	<SCRIPT type="text/javascript">
+	
+	var clickid;drawOP1( "ZOPSO041_DATA1","Test, M. (54 )","T. M.",240 ,228 ,330 ,138 ,1 ,"ACH","N1","","","","","08:00","08:27","08:45","","","#6A5ACD" );
+	
+	drawOPInfo( "ZOPSO041_DATA1","Test, M. (54 )","T. M.",5 ,1435 ,"ACH","N1","","","","","#6A5ACD" );
+	drawOPGeplant( "ZOPSO041_DATA1","Test, M. (54 )","T. M.",292 ,362 ,"ACH","N1","","","","","1" );
+	drawOP1( "ZOPSO042_DATA1","Wolkenbruch, H. (107 )","W. H.",178 ,290 ,444 ,24 ,1 ,"ACH","N2","","","","","07:44","08:07","09:42","","","#6A5ACD" );
+	drawOPInfo( "ZOPSO042_DATA1","Wolkenbruch, H. (107 )","W. H.",5 ,715 ,"ACH","N2","","","","","#6A5ACD" );
+	drawOP1( "ZOPSO042_DATA1","Anders, B. (70 )","A. B.",178 ,112 ,280 ,10 ,2 ,"ACH","N1","","","","","07:29","08:06","08:20","08:20","","#006400" );
+	drawOPInfo( "ZOPSO042_DATA1","Anders, B. (70 )","A. B.",725 ,715 ,"ACH","N1","","","","","#006400" );
+	drawOPGeplant( "ZOPSO042_DATA1","Wolkenbruch, H. (107 )","W. H.",654 ,362 ,"ACH","N2","","","","","1" );
+	drawOPGeplant( "ZOPSO042_DATA1","Anders, B. (70 )","A. B.",292 ,362 ,"ACH","N1","","","","","1" );
+	drawOP1( "ZOPSO044_DATA1","Medi, P. (86 )","M. P.",178 ,290 ,326 ,142 ,1 ,"ACH","keine","","","","","07:29","08:11","08:43","","","#6A5ACD" );
+	drawOPInfo( "ZOPSO044_DATA1","Medi, P. (86 )","M. P.",5 ,1435 ,"ACH","keine","","","","","#6A5ACD" );
+	drawOPGeplant( "ZOPSO044_DATA1","Medi, P. (86 )","M. P.",292 ,362 ,"ACH","keine","","","","","1" );
+	drawPat( "ZOPSO041","Saal 41","","" );
+	drawPat( "ZOPSO042","Saal 42","","" );
+	drawPat( "ZOPSO044","Saal 44","","" );
+	drawcanvasSaal( "ZOPSO041_DATA1","468 ","" );
+	drawcanvasSaal( "ZOPSO042_DATA1","468 ","" );
+	drawcanvasSaal( "ZOPSO044_DATA1","468 ","" );
+	
+	</SCRIPT>                                                                                              
